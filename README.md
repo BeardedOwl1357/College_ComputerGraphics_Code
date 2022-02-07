@@ -12,7 +12,7 @@ Follow this tutorial
 https://www.youtube.com/watch?v=9rUhGWijf9U
 
 ## Installing some useful tools
-The shell file (.sh) will be avaialble under the ```"0_Installation"``` folder. After downloading it in linux machine, execute the following command ```sudo install.sh``` (For this to work, Navigate to the directory where the script is being kept) **THIS IS GENERALLY NOT ADVISABLE TO RUN AN UNKNOWN BASH SCRIPT. I HIGHLY RECOMMEND YOU TO CHECK THE SCRIPT FOR YOURSELF AND VALIDATE WHETHER IT IS DOING IT WHAT I HAVE INTENDED FOR IT TO DO (TO INSTALL THE SOFTWARE)**  
+The shell file (.sh) will be avaialble under the ```"0_Installation_Stuff"``` folder. After downloading it in linux machine, execute the following command ```sudo install.sh``` (For this to work, Navigate to the directory where the script is being kept) **THIS IS GENERALLY NOT ADVISABLE TO RUN AN UNKNOWN BASH SCRIPT. I HIGHLY RECOMMEND YOU TO CHECK THE SCRIPT FOR YOURSELF AND VALIDATE WHETHER IT IS DOING IT WHAT I HAVE INTENDED FOR IT TO DO (TO INSTALL THE SOFTWARE)**  
 
 It installs some tools and essentials such as
 1. **g++** : C++ compiler
