@@ -1,3 +1,5 @@
+# https://github.com/yuvisidhu19/OpenGL
+
 # Code and Related Files
 Greetings, I am a student of Computer Science studying in **Thapar Institute Of Engineering And Technology**(2023 Batch) 
 1. I will be storing Computer Graphics code AND some theory material on this repository
