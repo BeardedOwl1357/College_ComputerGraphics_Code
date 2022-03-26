@@ -1,21 +1,27 @@
 #include "GL/freeglut.h"
 #include "stdio.h"
 
+void callback()
+{
+	printf("Working");
+}
+
 int main(int argc, char** argv)
 {
 	glutInit(&argc,argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-
-	int width = 1920,height = 1080;
-	glutInitWindowSize(width,height);
-
-	int x = 100, y = 100;
-	glutInitWindowPosition(x,y);
-
-	int winHandle = glutCreateWindow("Mera Window");
-	printf("Window handle = %d\n",winHandle);
-
+	// Defining color and buffer mode
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	// Defining Window
+	glutInitWindowPosition(100,100);
+	glutInitWindowSize(200,300);
+	glClear(GL_COLOR_BUFFER_BIT);
+	glClearColor(1.0,1.0,1.0,0.0);
+	// Creating Window
+	int window = glutCreateWindow("ChunChunMaru");
+	//Callback function
+	glutDisplayFunc(callback);
+	//MainLoop
 	glutMainLoop();
 	return 0;
-
 }
+

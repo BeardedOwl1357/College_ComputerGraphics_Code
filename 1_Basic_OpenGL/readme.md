@@ -4,15 +4,16 @@
 
 ## Compiling The C File 
 - To use OpenGL, we need to compile the program using `g++` or `gcc`
-- Some flags will be used and the final command is as follows:
+
+- `g++ {code_file_name.c} -lGL -lGLU -lglut -o {output_file_name.out}`
 	- Replace `{code_file_name.c}` with the `C` file
 	- Replace `{output_file_name.out}` with the name you wish to give the output file
 	
-`g++ {code_file_name.c} -lGL -lGLU -lglut -o {output_file_name.out}`
 
 ## Headers Required
 For accessing OpenGL : `#include "GL/freeglut.h"`
 
+-------------------------------------------------------------------
 # Initialisation and Display Mode
 ## Initialisation
 - The OpenGL is initialised in a program using the `glutInit()` function
@@ -24,6 +25,9 @@ For accessing OpenGL : `#include "GL/freeglut.h"`
 - Without this, an OpenGL program will not execute
 
 ## Display Mode (GLUT_DOUBLE)
+-------
+`NOTE : WE WILL USE GLUT_SINGLE FOR COLLEGE PURPOSES HOWEVER THIS IS USEFUL TO KNOW`
+-------
 - For practical purposes, we use the `GLUT_DOUBLE` flag to enable **Double Buffers**
 - [Original Link to understand basics of Double BUffers](https://www2.cs.arizona.edu/classes/cs433/spring02/opengl/dblbuffer.html)
 - In simple terms, Double Buffer consists of two buffers called the `Front Buffer` and `Back Buffer`
@@ -39,7 +43,7 @@ For accessing OpenGL : `#include "GL/freeglut.h"`
 
 ## Display Mode (GLUT_RGBA)
 - This is basically telling OpenGL to use RGBA color scheme
-- To experminet with RGBA scehme, [Use this website](https://rgbacolorpicker.com/)
+- To experiment with RGBA scehme, [Use this website](https://rgbacolorpicker.com/)
 - Each color is represented in the combination of **R**ed, **G**reen, **B**lue,**A**lpha:
 	- Alpha means the transparency of the color
 	- In original scale, a value of `256` means full color. For example, `R = 256` meant "express red color fully"
@@ -49,8 +53,63 @@ For accessing OpenGL : `#include "GL/freeglut.h"`
 	- Divide the original values by `256`
 	- Then we will obtain the clamped value
 
+- The code to set these parameters is as follows: `glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA)`
 --------------------------------------------------------------------
 # Creating Window
 ## Window Size
+- As the name suggests, we are defining the size of the window which we have to create
+- The function which is used is `glInitWindowSize(int width,int height)`:
+	- As the name of variable suggests, `width` and `height` of the window are to be supplied
 
 ## Window Position
+- As the name suggests, we are defining the position of the window which we have to create
+- The function which is used is `glInitWindowPosition(int x,int y)`:
+	- As the name of variable suggests, `x` coordinate and `y` coordinate of the window are to be supplied
+- This diagram can help visualise the coordinate axis of the "window"
+- This can be used to position the window which we will create:
+	- Origin is the top-left corner
+	- As we move downward, the `Y` coordinate increases
+	- As we move right, the `X` coordinate increases
+![Window_Position](Images/Window_Position.png)
+
+## Creating the Window
+- This step is easy: we will simply use the `glutCreateWindow(char* name)` to create the window
+- The `name` can be simply provided in `" "` (see the code above for example)
+- The function returns a handle (integer):
+	- This handle is used to access the window
+	- Kind of like an identifier for a particular window
+--------------------------------------------------------------------
+## glutDisplayFunc()
+- This is the function which we will call for displaying the "graphics" we want on the screen
+- The function which we will send in this is called the `Callback Function`
+- 
+
+---------------------------------
+## glutMainLoop()
+- This will keep the program running until user closes the window
+- This should be the second last line in `main()` (before `return 0`)
+- Equivalent to 
+- 
+```
+while True:
+	if userCloses():
+		break
+```
+-----------------------------------
+## glClearColor()
+- Used to set the background color
+- Defined as `glClearColor(float red, float green, float blue, float alpha)`:
+	- Uses the RGBA color scheme
+	- `alpha = 0` means **Opaque Background**
+	- `alpha = 1` means **Transparent Background**
+- A list of basic background colors is given as follows
+
+| RGBA Values                           | Resulting Color                           |
+| :-----------------------------------: | :---------------------------------------: |
+| (0.0,0.0,0.0,0.0)                     | Black                                     |
+| (1.0,0.0,0.0,0.0)                     | Red                                       |
+| (0.0,1.0,0.0,0.0)                     | Green                                     |
+| (0.0,0.0,1.0,0.0)                     | Blue                                      |
+| (1.0,1.0,1.0,0.0)                     | White                                     |
+
+
