@@ -44,32 +44,76 @@
 
 --------------------------------------------------
 ## Rotation
-[Theory Part 1](https://youtu.be/fXyrffB69gI)
+### [Theory Part 1](https://youtu.be/fXyrffB69gI) **AND** [Theory Part 2](https://youtu.be/y8MNTRyn8pI)
+- The videos above contain the proof for Algebraic form of rotation
+- The results are given as follows
 
-[Theory Part 2](https://youtu.be/y8MNTRyn8pI)
+![Rotation Basic](Images/Rotation_Basic.png)
 
-[Numerical](https://youtu.be/p_iN8I6dM7Y)
+### [Numerical](https://youtu.be/p_iN8I6dM7Y)
 
+### Matrix Formula
+- The matrix formula for rotation can be described as follows
+![Rotation_Matrix](Images/Rotation_Matrix.png)
+
+## Rotation About Pivot Point
+- As such with scaling, we rotate the "figure" with respect to origin
+- The origin acts as the **pivot point**:
+	- Pivot point is the point of rotation
+	- The pivot point need not be on the object
+- If we are supposed to rotate the object from a pivot point, we will do it as follows:
+	- Translate the pivot point to origin
+	- Rotate the "figure" with respect to origin
+	- Translate the rotated "figure" back
+- This may explain 
+![Rotation Pivot](Images/Rotation_Pivot.png)
 --------------------------------------------------
 
 # Shearing and Reflection
 ## Reflection
 [Theory](https://youtu.be/ojteOGAqdmA)
+- The best way to understand reflection is to see it
+
+![Reflection](Images/Reflection.png)
 
 [Numerical](https://youtu.be/F6YfTc3f-mQ)
 
 ## Shearing
 [Theory](https://youtu.be/VnRtEtnruBw)
 
+![Shearing](Images/Shearing.png)
+
 [Numerical](https://youtu.be/uBPHATW5KEk)
 
 --------------------------------------------------
 # Homogenous Coordinate
 [Theory](https://youtu.be/rZUw02zBoDI)
+- Simplifies operations performed on Graphics
+- We add another attribute (coordinate) called `w` coordinate and another row
+- This provides a consistent and uniform way of handling `affine transformations`:
+	- Affine transformation is an invertible and linear transformation
+	- Preserves linearity of segments
+	- Preserves parralelism between lines
+- There is a way to visualise Homogenous Coordinates as follows [Affine Transformations and Homogenous Coordinates](https://youtu.be/E3Phj6J287o)
+- After using the homogenous coordinate system, the basic transformations are as follows
 
+![Homogeneous Coordinates](Images/Homogeneous_Coordinates.png)
 --------------------------------------------------
 # Composite Transformations
-## Theory
+- Used to combine the results of multiple transformations into one
+- Since we are acheiving the transformations using matrices, it's just a series of multiplications which will give us with a matrix that can be used to obtain the final coordinates after `n` transformations
+- NOTE : Order of transformations and Order of matrix multiplication is **reverse**. The image below will explain succintly
+
+![Composite Transformation](Images/Composite_Transformation.png)
 
 ## Numerical
 - [ ] [Scaling About Fixed Point](https://youtu.be/J79MOSWgxTk)
+
+# Reflecting An Object About A Line L
+![Reflection Line Theory](Images/Reflection_Line_Theory.png)
+
+## THE VALUE OF mL is a result, remember it
+
+## Numerical
+![Reflection Line Numerical](Images/Reflection_Line_Numerical.png)
+
